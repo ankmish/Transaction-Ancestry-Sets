@@ -29,9 +29,9 @@ public class TransactionAncestryService implements ITransactionAncestryService {
         transactions.put(transactionId, transaction);
 
         for (String parentId : parentIds) {
-            Transaction parent = transactions.getOrDefault(parentId, new Transaction(parentId));
-            transactions.put(parentId, parent);
-            transaction.addParent(parent);
+                Transaction parent = transactions.getOrDefault(parentId, new Transaction(parentId));
+               // transactions.put(parentId, parent);
+                transaction.addParent(parent);
         }
     }
 
@@ -45,9 +45,11 @@ public class TransactionAncestryService implements ITransactionAncestryService {
             Transaction current = queue.poll();
             count++;
             for (Transaction parent : current.getParents()) {
-                if (!visited.contains(parent)) {
-                    queue.offer(parent);
-                    visited.add(parent);
+                if(transactions.containsKey(parent.getTransactionId())) {
+                    if (!visited.contains(parent)) {
+                        queue.offer(parent);
+                        visited.add(parent);
+                    }
                 }
             }
         }
