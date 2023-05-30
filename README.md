@@ -31,7 +31,9 @@ Hint: cache the API responses locally to avoid hitting rate limits.
 
 ## Output
 
-Top 10 Transactions....
+Top 10 Transactions:
+
+
 Transaction 7d08f0c61cda9379bdf1fa68095f827199a0d4cb6b466a6da3f0dc956772c52b: 14
 Transaction b2bab595112517e8b6a06aa9f616272b479e57e21b4da52877ddf385316aa19b: 13
 Transaction d294be35db0b5fab4a6a00d6e4441c7e54be88fa02dfc188b75e4604ec6c3fcf: 12
